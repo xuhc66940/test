@@ -47,4 +47,5 @@ pe2.introduce()
 pe3 = Person('wmr',5,'140cm','女')
 pe3.introduce()
 print('wyl和kq通过玩明日方舟认识，后结婚，有了wmr')
+print('以上的内容都是我自己的臆想，也是幻想，更是梦想')
 
