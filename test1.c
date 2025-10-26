@@ -49,3 +49,52 @@ int main()
 	
 	return 0;
 }
+
+int main()
+{
+	int arr[10] = { 10,2,8,22,16,4,10,6,14,20 };
+	int a, b, c, d, e, f, g, h, i, j;
+	int count = 0;
+	while (1)
+	{
+		for (int n = 0; n < 10; n++)
+		{
+			if (arr[n] % 2 == 1)
+			{
+				arr[n]++;
+			}
+		}
+		a = arr[0];
+		b = arr[1];
+		c = arr[2];
+		d = arr[3];
+		e = arr[4];
+		f = arr[5];
+		g = arr[6];
+		h = arr[7];
+		i = arr[8];
+		j = arr[9];
+		for (int i = 0; i < 10; i++)
+		{
+			arr[i] = arr[i] / 2;
+		}
+		arr[0] = j / 2 + a / 2;
+		arr[1] = a / 2 + b / 2;
+		arr[2] = b / 2 + c / 2;
+		arr[3] = c / 2 + d / 2;
+		arr[4] = d / 2 + e / 2;
+		arr[5] = e / 2 + f / 2;
+		arr[6] = f / 2 + g / 2;
+		arr[7] = g / 2 + h / 2;
+		arr[8] = h / 2 + i / 2;
+		arr[9] = j / 2 + i / 2;
+		count++;
+		if (arr[0] == arr[1] && arr[1] == arr[2] && arr[2] == arr[3] && arr[3] == arr[4] && arr[4] == arr[5] && arr[5] == arr[6] && arr[6] == arr[7] && arr[7] == arr[8] && arr[8] == arr[9] && arr[9] == arr[0])
+		{
+			break;
+		}
+	}
+	printf("%d\n", count);
+	printf("%d.%d,%d,%d\n", arr[0], arr[1], arr[2], arr[3]);
+	return 0;
+}

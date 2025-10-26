@@ -22,30 +22,47 @@
 # pe.introduce()
 # pe2 = Person()  #这也是实例化对象
 # print(pe2.sex)
-class test():
-    def __init__(self):
-        print('这是__init__()函数')
-
-te = test()
+# class test():
+#     def __init__(self):
+#         print('这是__init__()函数')
+#
+# te = test()
+# class Person():
+#     def __init__(self,name,age,height,sex):
+#         self.name = name   # 这是实例属性
+#         self.age = age
+#         self.height = height
+#         self.sex = sex
+#     def play(self):
+#         print(f'{self.name}在玩明日方舟')
+#     def introduce(self):
+#         print(f'{self.name}的年龄是{self.age},身高是{self.height},性别是{self.sex}')
+# pe = Person('wyl',26,'170cm','男')     #实例化对象
+# pe.play()         #实例化对象
+# pe.introduce()    #实例化对象
+#
+# pe2 = Person('kq',30,'163cm','女')
+# pe2.play()
+# pe2.introduce()
+# pe3 = Person('wmr',5,'140cm','女')
+# pe3.introduce()
+# print('wyl和kq通过玩明日方舟认识，后结婚，有了wmr')
+# print('以上的内容都是我自己的臆想，也是幻想，更是梦想')
 class Person():
-    def __init__(self,name,age,height,sex):
-        self.name = name   # 这是实例属性
-        self.age = age
-        self.height = height
-        self.sex = sex
-    def play(self):
-        print(f'{self.name}在玩明日方舟')
-    def introduce(self):
-        print(f'{self.name}的年龄是{self.age},身高是{self.height},性别是{self.sex}')
-pe = Person('wyl',26,'170cm','男')     #实例化对象
-pe.play()         #实例化对象
-pe.introduce()    #实例化对象
+    def A(self):
+        print('一个正常的人')
+    def B(self):
+        print('他有一个病娇的妻子,还是一个千金')
+class Boy(Person):
+    def A(self):
+        print('被一个病娇强制爱')
+    def B(self):
+        print('一天要做三次')
+class Giel(Person):
+    def A(self):
+        print('也是一个病娇，还是骨科')
+boy = Boy()
+boy.A()
+boy.B()
 
-pe2 = Person('kq',30,'163cm','女')
-pe2.play()
-pe2.introduce()
-pe3 = Person('wmr',5,'140cm','女')
-pe3.introduce()
-print('wyl和kq通过玩明日方舟认识，后结婚，有了wmr')
-print('以上的内容都是我自己的臆想，也是幻想，更是梦想')
 
