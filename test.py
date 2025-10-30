@@ -48,21 +48,49 @@
 # pe3.introduce()
 # print('wyl和kq通过玩明日方舟认识，后结婚，有了wmr')
 # print('以上的内容都是我自己的臆想，也是幻想，更是梦想')
-class Person():
-    def A(self):
-        print('一个正常的人')
-    def B(self):
-        print('他有一个病娇的妻子,还是一个千金')
-class Boy(Person):
-    def A(self):
-        print('被一个病娇强制爱')
-    def B(self):
-        print('一天要做三次')
-class Giel(Person):
-    def A(self):
-        print('也是一个病娇，还是骨科')
-boy = Boy()
-boy.A()
-boy.B()
+# class Person():
+#     def A(self):
+#         print('一个正常的人')-
+#     def B(self):
+#         print('他有一个病娇的妻子,还是一个千金')
+# class Boy(Person):
+#     def A(self):
+#         print('被一个病娇强制爱')
+#     def B(self):
+#         print('一天要做三次')
+# class Giel(Person):
+#     def A(self):
+#         print('也是一个病娇，还是骨科')
+# boy = Boy()
+# boy.A()
+# boy.B()
+# class Animal:
+#     def walk(self):
+#         print('我会走路')
+# class Dog(Animal):
+#     name = '小黑'
+#     def bite(self):
+#         print('我会咬人')
+#     pass
+class Person(object):
+    @staticmethod
+    def study():
+        print('人类会学习')
+Person.study()
+pe = Person()
+pe.study()
+class Person(object):
+    name = 'bingbing'
+    @classmethod
+    def sleep(cls):
+        print('cls',cls)
+        print('人类会睡觉')
+        print(cls.name)
+print(Person)
+Person.sleep()
+
+
+
+
 
 
