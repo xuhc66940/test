@@ -58,7 +58,7 @@
 #         print('被一个病娇强制爱')
 #     def B(self):
 #         print('一天要做三次')
-# class Giel(Person):
+# class Girl(Person):
 #     def A(self):
 #         print('也是一个病娇，还是骨科')
 # boy = Boy()
@@ -72,22 +72,63 @@
 #     def bite(self):
 #         print('我会咬人')
 #     pass
-class Person(object):
-    @staticmethod
-    def study():
-        print('人类会学习')
-Person.study()
-pe = Person()
-pe.study()
-class Person(object):
-    name = 'bingbing'
-    @classmethod
-    def sleep(cls):
-        print('cls',cls)
-        print('人类会睡觉')
-        print(cls.name)
-print(Person)
-Person.sleep()
+# class Person(object):
+#     @staticmethod
+#     def study():
+#         print('人类会学习')
+# Person.study()
+# pe = Person()
+# pe.study()
+# class Person(object):
+#     name = 'bingbing'
+#     @classmethod
+#     def sleep(cls):
+#         print('cls',cls)
+#         print('人类会睡觉')
+#         print(cls.name)
+# print(Person)
+# Person.sleep()
+# class Person(object):
+#     name = '小明'
+#     def __init__(self):
+#         self.age = 19
+# #     def play(self):
+# #         print(f'{Person.name}在玩游戏')
+# #         print(self.age)
+# # pe = Person()
+# # pe.play()
+#     @classmethod
+#     def introduce(cls):
+#         print(cls.name)
+#         print(cls.name)
+# pe = Person()
+# pe.introduce()
+# class Test(object):
+#     def __init__(self):
+#         print('这是__init__()')
+#     def __new__(cls, *args, **kwargs):
+#         print('我是__new__()')
+#         print(cls)
+#         res = super().__new__(cls)
+#         return res
+# te = Test()
+# print('te:',te)
+# class Person(object):
+#     def __new__(cls, *args, **kwargs):
+#         print('这是new方法')
+#         print('返回值：',super().__new__(cls))
+#         return super().__new__(cls)
+#     def __init__(self,name):
+#         self.name = name
+#         print('名字是：',self.name)
+# pe = Person('wyl')
+# print(pe)
+# pe2 = Person('kq')
+# print(pe)
+
+
+
+
 
 
 
