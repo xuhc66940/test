@@ -125,6 +125,40 @@
 # print(pe)
 # pe2 = Person('kq')
 # print(pe)
+# class Singleton(object):
+#     obj = None
+#     def __new__(cls, *args, **kwargs):
+#         print('这是new方法')
+#         if cls.obj == None:
+#             cls.obj = super().__new__(cls)
+#         return cls.obj
+#     def __init__(self):
+#         print('我是__init__')
+# s = Singleton()
+# print(s)
+# s2 = Singleton()
+# print(s2)
+# s3 = Singleton()
+# print(s3)
+# class C:
+#     def __str__(self):
+#         return
+# c = C()
+# print(c)
+# def funa():
+#     print('aaa')
+# funa()
+# print(callable(funa))
+class A:
+    def __call__(self, *args, **kwargs):
+        print('这是call')
+a = A()
+a()
+a2 = A()
+a2()
+print(callable(a))
+
+
 
 
 
