@@ -149,23 +149,66 @@
 #     print('aaa')
 # funa()
 # print(callable(funa))
-class A:
-    def __call__(self, *args, **kwargs):
-        print('这是call')
-a = A()
-a()
-a2 = A()
-a2()
-print(callable(a))
-
-
-
-
-
-
-
-
-
-
-
-
+# class A:
+#     def __call__(self, *args, **kwargs):
+#         print('这是call')
+# a = A()
+# a()
+# a2 = A()
+# a2()
+# print(callable(a))
+# class A(object):
+#     pass
+# a1 = A()
+# print(a1)
+# a2 = A()
+# print(a2)
+# f = open('test')
+#
+# # print(f.readline())
+# # print(f.readline())
+# for i in f:
+#       print(i)
+#       text = f.readline()
+#       if not text:
+#             break
+# f.close()
+# f = open('test')
+# text =f.readlines()
+# #print(text)
+# #print(type(text))
+# for i in text:
+#     print(i)
+# f.close()
+# file = open('test01','w')
+# #print(file.read())
+# file.write('bingbing,susu,ziyi')
+# file.close
+# f = open('test','w+')
+# #print(f.read())
+# f.write('wyl,ke,shenghaizi')
+# print(f.read())
+# f.close()
+# f = open('test','a')
+# f.write('\nhello')
+# f.close()
+# f = open('test')
+# print(f.read())
+# f.close()
+# f = open('test','w+')
+# f.write("Hello phthon!")
+# pos = f.tell()
+# print('文件当前指针所在位置：',pos)
+# f.seek(0,0)
+# #print(pos)
+# pos2 = f.tell()
+# print('移动后所在位置：',pos2)
+# print(f.read())
+# f.close()
+f = open('test','w+')
+f.write("Hello python!")
+print("光标位置：",f.tell())
+f.seek(0,0)
+print(f.tell())
+print(f.read())
+f.close()
