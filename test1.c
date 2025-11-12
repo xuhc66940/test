@@ -98,32 +98,82 @@
 //	printf("%d.%d,%d,%d\n", arr[0], arr[1], arr[2], arr[3]);
 //	return 0;
 //}
-enum trafficlight
-{
-	RED,
-	GREEN,
-	YELLOW
-};
+//enum trafficlight
+//{
+//	RED,
+//	GREEN,
+//	YELLOW
+//};
+//int main()
+//{
+//	enum trafficlight light = RED;
+//	for (int i = 0; i < 3; i++)
+//	{
+//		switch (light)
+//		{
+//		case RED:
+//			printf("红灯停\n");
+//			light = GREEN;
+//			break;
+//		case GREEN:
+//			printf("绿灯行\n");
+//			light = YELLOW;
+//			break;
+//		case YELLOW:
+//			printf("黄灯准备停\n");
+//			light = RED;
+//			break;
+//		}
+//	}
+//	return 0;
+//}
 int main()
 {
-	enum trafficlight light = RED;
-	for (int i = 0; i < 3; i++)
+	FILE* pfr = fopen("./nihao.mp4", "rb");
+	assert(pfr != NULL);
+	if (pfr == NULL)
 	{
-		switch (light)
-		{
-		case RED:
-			printf("红灯停\n");
-			light = GREEN;
-			break;
-		case GREEN:
-			printf("绿灯行\n");
-			light = YELLOW;
-			break;
-		case YELLOW:
-			printf("黄灯准备停\n");
-			light = RED;
-			break;
-		}
+		perror("打开源文件失败\n");
+		return 1;
 	}
+	FILE* pfw = fopen("./nihao_two.mp4", "wb");
+	assert(pfw != NULL);
+	if (pfw == NULL)
+	{
+		perror("创建目标文件失败\n");
+		return 1;
+	}
+	unsigned char buffer[65536];
+
+
+	size_t total_bytes = 0;
+
+	size_t bytes_read = 0;
+
+	int count = 0;
+	while ((bytes_read = fread(buffer, 1, sizeof(buffer), pfr)) > 0)
+	{
+		count++;
+		size_t bytes_written = fwrite(buffer, 1, bytes_read, pfw);
+		if (bytes_written != bytes_read)
+		{
+			perror("写入失败");
+			fclose(pfr);
+			fclose(pfw);
+			pfr = NULL;
+			pfw = NULL;
+			return 1;
+		}
+		total_bytes += bytes_written;
+	}
+	if (ferror(pfr))
+	{
+		perror("读写过程中发生失败");
+		fclose(pfr);
+		fclose(pfw);
+		pfr = NULL;
+		pfw = NULL;
+	}
+	printf("拷贝成功，总字节数：%zu\n", total_bytes);
+	printf("读取次数:count = %d\n", count);
 	return 0;
-}
