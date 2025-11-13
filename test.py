@@ -205,10 +205,27 @@
 # print('移动后所在位置：',pos2)
 # print(f.read())
 # f.close()
-f = open('test','w+')
-f.write("Hello python!")
-print("光标位置：",f.tell())
-f.seek(0,0)
-print(f.tell())
-print(f.read())
-f.close()
+# f = open('test','w+')
+# f.write("Hello python!")
+# print("光标位置：",f.tell())
+# f.seek(0,0)
+# print(f.tell())
+# print(f.read())
+# f.close()
+# with open('test','w') as f:
+#     f.write('emmmmmmmmmmm.....')
+# with open('test','w',encoding='utf-8' ) as f:
+#     f.write("kq23岁")
+# with open('test',encoding='utf-8') as f:
+#     print(f.read())
+# with open("C:\\Users\\wangy\\Desktop\\新建文件夹\\图片.jpg",'rb') as file:
+#     img = file.read()
+#     print(img)
+# with open("G:\\code\\图片.jpg",'wb') as f:
+#     f.write(img)
+# import os
+# # os.rename('test','kq')
+# # os.remove('kq')
+# print(os.listdir('../'))
+
+
