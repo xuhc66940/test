@@ -226,6 +226,61 @@
 # import os
 # # os.rename('test','kq')
 # # os.remove('kq')
-# print(os.listdir('../'))
-
+# print(os.lis
+# from collections import Iterable
+# from collections.abc import Iterable
+# print(isinstance('123',(str,dict)))
+# li = {1,2,3,4,5}
+# li2 = li.__iter__()
+# # print(li2)
+# # print(li2.__next__())
+# # print(li2.__next__())
+# # print(li2.__next__())
+# # print(li2.__next__())
+# # print(li2.__next__())
+# # print(next(li2))
+# # print(next(li2))
+# # print(next(li2))
+# # print(next(li2))
+# # print(next(li2))
+# # print(next(li2))
+# print(dir(li))
+# from collections.abc import Iterable,Iterator
+# name = "bingbing"
+# print(dir(name))
+# print(isinstance(name,Iterable))
+# print(isinstance(name,Iterator))
+# name2 = iter(name)
+# print(dir(name2))
+# print(isinstance(name2,Iterable))
+# print(isinstance(name2,Iterator))
+# class test(object):
+#     def __init__(self):
+#         self.num = 1
+#     def funa(self):
+#         print(self.num)
+#         self.num += 1
+#
+# te = test()
+# print(te)
+# for i in range(5):
+#     te.funa()
+# for i in te:
+#     print(i)
+class MyIterator(object):
+    def __init__(self):
+        self.num = 1
+    def __iter__(self):
+        self.num = 0
+        return self
+    def __next__(self):
+        if self.num == 10:
+            raise StopIteration("终止迭代，数据已经被取完")
+        self.num += 1
+        return self.num
+mi = MyIterator()
+print(mi)
+print(next(mi))
+for i in mi:
+    print(i)
 
