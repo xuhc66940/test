@@ -267,20 +267,181 @@
 #     te.funa()
 # for i in te:
 #     print(i)
-class MyIterator(object):
-    def __init__(self):
-        self.num = 1
-    def __iter__(self):
-        self.num = 0
-        return self
-    def __next__(self):
-        if self.num == 10:
-            raise StopIteration("终止迭代，数据已经被取完")
-        self.num += 1
-        return self.num
-mi = MyIterator()
-print(mi)
-print(next(mi))
-for i in mi:
-    print(i)
+# class MyIterator(object):
+#     def __init__(self):
+#         self.num = 1
+#     def __iter__(self):
+#         self.num = 0
+#         return self
+#     def __next__(self):
+#         if self.num == 10:
+#             raise StopIteration("终止迭代，数据已经被取完")
+#         self.num += 1
+#         return self.num
+# mi = MyIterator()
+# print(mi)
+# print(next(mi))
+# for i in mi:
+#     print(i)
+# for i in range(5):
+#     print(i * 5)
+# li = [i * 5 for i in range(5)]
+# gen = (i * 5 for i in range(5))
+# print(li)
+# print(gen)
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# def test():
+#     li = []
+#     li.append('a')
+#     print(li)
+# test()
+# test()
+# def gen(n):
+#     li = []
+#     li.append(n)
+#     print('开始了')
+#     yield'a'
+#     yield'b'
+#     yield'c'
+# gen_01 = gen()
+# print(gen_01)
+# print(next(gen_01))
+# print(next(gen_01))
+# print(next(gen_01))
+# def gen2(n):
+#     li = []
+#     # for i in range(n):
+#     #     li.append(i)
+#     a = 0;
+#     while a < n:
+#         li.append(a)
+#         yield a
+#         a += 1
+#     print('li:',li)
+# for i in gen2(5):
+#     print(i)
+# def test_a():
+#     yield 1
+#     yield 2
+#     yield 3
+# ta = test_a()
+# print(next(ta))
+# print(next(ta))
+# print(next(ta))
+# print(next(test_a()))
+# print(next(test_a()))
+# print(next(test_a()))
+# import time
+# def sing():
+#     print(("我在唱歌"))
+#     time.sleep(2)
+#     print("唱完歌了")
+# def dance():
+#     print("我在跳舞")
+#     time.sleep(2)
+#     print("跳完舞了")
+# sing()
 
+import threading
+import time
+from threading import Lock
+# def sing(name):
+#     print(f"{name}在唱歌")
+#     time.sleep(2)
+#     print(f"{name}唱完了")
+# def dance(name2):
+#     print(f"{name2}在跳舞")
+#     time.sleep(2)
+#     print(f"{name2}跳完舞了")
+# if __name__ =='__main__':
+#     t1 = threading.Thread(target=sing,args=("wyl",))
+#     #print(t1)
+#     t2 = threading.Thread(target=dance,args=("kq",))
+#     t1.setDaemon(True)
+#     t2.setDaemon(True)
+#     t1.start()
+#     t2.start()
+#     t1.join()
+#     t2.join()
+#     print(t1.getName())
+#     print(t2.getName())
+#     t1.setName('子线程1')
+#     t2.setName('子线程2')
+#     print(t1.getName())
+#     print(t2.getName())
+#     print("完美谢幕")
+# def task():
+#     time.sleep(1)
+#     print("当前线段是:",threading.current_thread().name)
+# if __name__=="__main__":
+#     for i in range(5):
+#         t = threading.Thread(target=task)
+#         t.start()
+# li = []
+# def wdata():
+#     for i in range(5):
+#         li.append(i)
+#         time.sleep(1)
+#     print("写入的数据是:",li)
+# def rdata():
+#     print("读取的数据是：",li)
+# if __name__=='__main__':
+#     wd = threading.Thread(target=wdata)
+#     rd = threading.Thread(target=rdata)
+#     wd.start()
+#     wd.join()
+#     rd.start()
+#     rd.join()
+# a = 0
+# b = 10000000
+# def add():
+#     for i in range(b):
+#         global a;
+#         a +=1;
+#     print("第一次累加：",a)
+#
+# def add2():
+#     for i in range(b):
+#         global a;
+#         a +=1;
+#     print("第二次累加：",a)
+# # add()
+# # add2()
+# if __name__=='__main__':
+#     a1 = threading.Thread(target=add)
+#     a2 = threading.Thread(target=add2)
+#     a1.start()
+#     a2.start()
+# if __name__=='__main__':
+#     a1 = threading.Thread(target=add)
+#     a2 = threading.Thread(target=add2)
+#     a1.start()
+#     a1.join()
+#     a2.start()
+#     a2.join()
+# lock = Lock()
+# a = 0
+# b = 10000000
+# def add():
+#     lock.acquire()
+#     for i in range(b):
+#         global a;
+#         a +=1;
+#     print("第一次累加：",a)
+#     lock.release()
+# def add2():
+#     lock.acquire()
+#     for i in range(b):
+#         global a;
+#         a +=1;
+#     print("第二次累加：",a)
+#     lock.release()
+# if __name__=='__main__':
+#     a1 = threading.Thread(target=add)
+#     a2 = threading.Thread(target=add2)
+#     a1.start()
+#     a2.start()
