@@ -1,1 +1,1 @@
-Hello,this is a code group of a collehe student.I am a fresher,so the code maybe is very bad or complex.But now I am studying python,Java,C++,c#.I will very appreciated if you can give me some advice about my code.
+Hello,this is a code group of a collehe student.I am a fresher,so the code maybe is very bad or complex.But now I am studying python,Java,C++,C#.I will very appreciated if you can give me some advice about my code.
